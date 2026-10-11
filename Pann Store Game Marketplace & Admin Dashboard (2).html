@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pann Store - Marketplace Akun Game Terpercaya & Bergaransi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090d16',
+                        darkCard: '#111827',
+                        darkBorder: '#1f2937',
+                        brandPurple: '#8b5cf6',
+                        brandCyan: '#06b6d4',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #090d16; }
+        ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #374151; }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 min-h-screen flex flex-col selection:bg-purple-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-darkBg/90 backdrop-blur-md border-b border-darkBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchView('store')">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-purple-600/30">
+                    <i data-lucide="shield-alert" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black tracking-wider bg-gradient-to-r from-purple-400 via-cyan-300 to-white bg-clip-text text-transparent">PANN STORE</h1>
+                    <p class="text-[11px] text-slate-400 font-semibold tracking-wide">Official & Trusted Gaming Market</p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-2 sm:space-x-3">
+                <button onclick="switchView('store')" id="navStoreBtn" class="px-4 py-2.5 rounded-xl text-sm font-semibold transition-all flex items-center space-x-2 bg-purple-600/20 text-purple-300 border border-purple-500/30 shadow-sm">
+                    <i data-lucide="store" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Katalog Toko</span>
+                </button>
+                <button onclick="openBuyerOrdersModal()" class="px-4 py-2.5 rounded-xl text-sm font-semibold transition-all flex items-center space-x-2 bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white border border-darkBorder">
+                    <i data-lucide="package-check" class="w-4 h-4 text-emerald-400"></i>
+                    <span class="hidden sm:inline">Pesanan Saya & Data Akun</span>
+                </button>
+                <button onclick="openChatModal()" class="relative px-4 py-2.5 rounded-xl text-sm font-semibold transition-all flex items-center space-x-2 bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/20">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Live Chat Web</span>
+                    <span id="chatBadge" class="absolute -top-1.5 -right-1.5 bg-purple-600 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold hidden">0</span>
+                </button>
+                <button onclick="switchView('admin')" id="navAdminBtn" class="px-4 py-2.5 rounded-xl text-sm font-semibold transition-all flex items-center space-x-2 bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white border border-darkBorder">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Panel Admin</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- ==================== VIEW 1: STORE / BUYER ==================== -->
+        <div id="storeView" class="space-y-8">
+            
+            <!-- Hero Banner -->
+            <div class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-purple-950/60 via-indigo-950/40 to-cyan-950/30 border border-purple-500/20 p-8 md:p-12 shadow-2xl">
+                <div class="absolute -right-10 -bottom-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="relative z-10 max-w-2xl space-y-4">
+                    <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 uppercase tracking-widest inline-flex items-center gap-1.5">
+                        <i data-lucide="zap" class="w-3.5 h-3.5 text-cyan-400"></i> PUSAT AKUN SULTAN & AMAN 100% BERGARANSI
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">
+                        Jual Beli Akun Game Termurah di <span class="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Pann Store</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                        Temukan akun impian Mobile Legends, Free Fire, Genshin Impact, Valorant, Roblox, & PUBG Mobile dengan pengiriman data instan via Web atau WhatsApp.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#catalogAnchor" class="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-sm shadow-lg shadow-purple-600/30 hover:opacity-95 transition flex items-center space-x-2">
+                            <span>Mulai Belanja</span>
+                            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                        </a>
+                        <button onclick="openChatModal()" class="px-6 py-3 rounded-xl bg-darkCard border border-darkBorder text-slate-200 font-bold text-sm hover:bg-slate-800 transition flex items-center space-x-2">
+                            <i data-lucide="message-circle" class="w-4 h-4 text-cyan-400"></i>
+                            <span>Tanya Kendala / Admin</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Filters Bar -->
+            <div id="catalogAnchor" class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-bold tracking-wide text-white flex items-center gap-2">
+                        <i data-lucide="gamepad-2" class="w-5 h-5 text-purple-400"></i> Pilih Game Pavorit
+                    </h3>
+                    <span id="productCountBadge" class="text-xs text-slate-400 bg-darkCard px-3 py-1 rounded-lg border border-darkBorder font-medium">0 Akun</span>
+                </div>
+                
+                <div id="gameFiltersContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-3">
+                    <!-- Dynamic Game Filters -->
+                </div>
+            </div>
+
+            <!-- Search & Toolbar -->
+            <div class="bg-darkCard p-4 rounded-2xl border border-darkBorder flex flex-col md:flex-row gap-4 items-center justify-between shadow-lg">
+                <div class="relative w-full md:w-96">
+                    <i data-lucide="search" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></i>
+                    <input type="text" id="searchInput" oninput="filterProducts()" placeholder="Cari nama akun, hero, skin..." class="w-full bg-darkBg border border-darkBorder rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500 transition">
+                </div>
+
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <select id="categoryFilter" onchange="filterProducts()" class="bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500 transition flex-1 md:flex-initial">
+                        <option value="all">Semua Kategori</option>
+                        <option value="Skin Epic / Collector">Skin Epic / Collector</option>
+                        <option value="Rank Mythic / Immortal">Rank Mythic / Immortal</option>
+                        <option value="Akun Berkah / Smurf">Akun Berkah / Smurf</option>
+                        <option value="Full Character / Weapon">Full Character / Weapon</option>
+                        <option value="Limited / Rare Items">Limited / Rare Items</option>
+                    </select>
+
+                    <select id="sortFilter" onchange="filterProducts()" class="bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500 transition flex-1 md:flex-initial">
+                        <option value="newest">Terbaru</option>
+                        <option value="cheapest">Harga Termurah</option>
+                        <option value="expensive">Harga Termahal</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamically populated cards -->
+            </div>
+        </div>
+
+        <!-- ==================== VIEW 2: ADMIN PANEL ==================== -->
+        <div id="adminView" class="hidden space-y-8">
+            
+            <div class="bg-gradient-to-r from-slate-900 to-indigo-950 p-6 rounded-3xl border border-darkBorder flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h2 class="text-2xl font-black text-white">Panel Admin Pann Store</h2>
+                    <p class="text-sm text-slate-400">Kelola inventaris akun game, kirim data akun, atur metode pembayaran sah, & balas chat kendala.</p>
+                </div>
+                <button onclick="openProductModal()" class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm transition flex items-center space-x-2 shadow-lg shadow-purple-600/30">
+                    <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                    <span>Tambah Akun Baru</span>
+                </button>
+            </div>
+
+            <!-- Admin Tabs Navigation -->
+            <div class="flex border-b border-darkBorder space-x-6 overflow-x-auto">
+                <button onclick="switchAdminTab('dashboard')" id="adminTabDashboard" class="pb-3 text-sm font-bold border-b-2 border-purple-500 text-purple-400 flex items-center space-x-2 whitespace-nowrap transition">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+                    <span>Statistik</span>
+                </button>
+                <button onclick="switchAdminTab('products')" id="adminTabProducts" class="pb-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2 whitespace-nowrap transition">
+                    <i data-lucide="package" class="w-4 h-4"></i>
+                    <span>Kelola Produk</span>
+                </button>
+                <button onclick="switchAdminTab('orders')" id="adminTabOrders" class="pb-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2 whitespace-nowrap transition">
+                    <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                    <span>Kelola Pesanan & Kirim Data Akun</span>
+                </button>
+                <button onclick="switchAdminTab('payments')" id="adminTabPayments" class="pb-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2 whitespace-nowrap transition">
+                    <i data-lucide="credit-card" class="w-4 h-4"></i>
+                    <span>Kustomisasi Pembayaran Sah</span>
+                </button>
+                <button onclick="switchAdminTab('chats')" id="adminTabChats" class="pb-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2 whitespace-nowrap transition">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <span>Live Chat Kendala Pelanggan</span>
+                </button>
+                <button onclick="switchAdminTab('settings')" id="adminTabSettings" class="pb-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2 whitespace-nowrap transition">
+                    <i data-lucide="settings" class="w-4 h-4"></i>
+                    <span>Pengaturan Toko & WA</span>
+                </button>
+            </div>
+
+            <!-- TAB 1: STATS -->
+            <div id="adminContentDashboard" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-darkCard p-6 rounded-2xl border border-darkBorder flex items-center justify-between">
+                        <div>
+                            <p class="text-xs text-slate-400 font-semibold">Total Produk</p>
+                            <h4 id="statTotalProducts" class="text-2xl font-black text-white mt-1">0</h4>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center border border-purple-500/20">
+                            <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <div class="bg-darkCard p-6 rounded-2xl border border-darkBorder flex items-center justify-between">
+                        <div>
+                            <p class="text-xs text-slate-400 font-semibold">Total Pesanan</p>
+                            <h4 id="statTotalOrders" class="text-2xl font-black text-white mt-1">0</h4>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center border border-cyan-500/20">
+                            <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <div class="bg-darkCard p-6 rounded-2xl border border-darkBorder flex items-center justify-between">
+                        <div>
+                            <p class="text-xs text-slate-400 font-semibold">Pendapatan Sukses</p>
+                            <h4 id="statTotalRevenue" class="text-xl font-black text-emerald-400 mt-1">Rp 0</h4>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center border border-emerald-500/20">
+                            <i data-lucide="wallet" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <div class="bg-darkCard p-6 rounded-2xl border border-darkBorder flex items-center justify-between">
+                        <div>
+                            <p class="text-xs text-slate-400 font-semibold">Sistem Toko</p>
+                            <h4 class="text-sm font-bold text-emerald-400 mt-1 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Online</h4>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center border border-emerald-500/20">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-darkCard p-6 rounded-2xl border border-darkBorder space-y-3">
+                    <h4 class="font-bold text-white text-lg">Panduan Admin Pann Store</h4>
+                    <p class="text-sm text-slate-400">Pembeli diwajibkan mengisi <strong>Nama Lengkap</strong> dan <strong>Nomor WhatsApp</strong> saat checkout. Setelah pembayaran diverifikasi, Anda dapat mengirimkan data akun (Username & Password) langsung via Web (bisa dicek pembeli di menu "Pesanan Saya") atau via tombol WhatsApp.</p>
+                </div>
+            </div>
+
+            <!-- TAB 2: PRODUCTS CRUD -->
+            <div id="adminContentProducts" class="hidden space-y-6">
+                <div class="flex justify-between items-center">
+                    <h4 class="font-bold text-white text-lg">Inventaris Akun Game</h4>
+                    <button onclick="openProductModal()" class="px-3.5 py-2 rounded-xl bg-purple-600 text-white font-semibold text-xs transition flex items-center space-x-1.5">
+                        <i data-lucide="plus" class="w-4 h-4"></i><span>Tambah Akun</span>
+                    </button>
+                </div>
+
+                <div class="bg-darkCard rounded-2xl border border-darkBorder overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-sm">
+                            <thead>
+                                <tr class="bg-darkBg/60 border-b border-darkBorder text-slate-400 font-semibold">
+                                    <th class="p-4">Akun & Game</th>
+                                    <th class="p-4">Kategori</th>
+                                    <th class="p-4">Harga</th>
+                                    <th class="p-4">Status</th>
+                                    <th class="p-4 text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminProductTableBody" class="divide-y divide-darkBorder text-slate-300">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: ORDERS & ACCOUNT DELIVERY -->
+            <div id="adminContentOrders" class="hidden space-y-6">
+                <div class="flex justify-between items-center">
+                    <h4 class="font-bold text-white text-lg">Daftar Transaksi Pesanan & Kirim Data Akun</h4>
+                    <span class="text-xs text-slate-400">Kirim data akun via web atau WhatsApp ke pembeli</span>
+                </div>
+                <div class="bg-darkCard rounded-2xl border border-darkBorder overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-sm">
+                            <thead>
+                                <tr class="bg-darkBg/60 border-b border-darkBorder text-slate-400 font-semibold">
+                                    <th class="p-4">ID / Pembeli & WA</th>
+                                    <th class="p-4">Produk Akun</th>
+                                    <th class="p-4">Pembayaran</th>
+                                    <th class="p-4">Total</th>
+                                    <th class="p-4">Status</th>
+                                    <th class="p-4 text-center">Kirim Data Akun & Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminOrderTableBody" class="divide-y divide-darkBorder text-slate-300">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: PAYMENT METHODS CUSTOMIZATION -->
+            <div id="adminContentPayments" class="hidden space-y-6">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="font-bold text-white text-lg">Kustomisasi Metode Pembayaran Sah Indonesia</h4>
+                        <p class="text-xs text-slate-400">Tambah, edit, aktifkan, atau hapus metode pembayaran resmi yang tampil saat checkout.</p>
+                    </div>
+                    <button onclick="openPaymentModal()" class="px-3.5 py-2 rounded-xl bg-purple-600 text-white font-semibold text-xs transition flex items-center space-x-1.5">
+                        <i data-lucide="plus" class="w-4 h-4"></i><span>Tambah Metode Pembayaran</span>
+                    </button>
+                </div>
+
+                <div id="adminPaymentGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- TAB 5: CHATS -->
+            <div id="adminContentChats" class="hidden space-y-6">
+                <h4 class="font-bold text-white text-lg">Live Chat Web & Penanganan Kendala Pelanggan</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-darkCard p-4 rounded-2xl border border-darkBorder h-[500px]">
+                    <div id="adminChatList" class="border-r border-darkBorder pr-4 space-y-2 overflow-y-auto">
+                        <!-- Chat sessions -->
+                    </div>
+                    <div id="adminChatWorkspace" class="md:col-span-2 flex flex-col justify-between h-full">
+                        <div class="text-center py-20 text-slate-500">Pilih salah satu percakapan di sebelah kiri untuk membalas kendala pembeli.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 6: SETTINGS -->
+            <div id="adminContentSettings" class="hidden space-y-6">
+                <div class="bg-darkCard p-6 rounded-2xl border border-darkBorder max-w-2xl space-y-4">
+                    <h4 class="font-bold text-white text-lg">Pengaturan Kontak & WhatsApp Admin</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Toko</label>
+                            <input type="text" id="settingStoreName" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500" value="Pann Store Official">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Nomor WhatsApp CS Admin (Format: 628xxx)</label>
+                            <input type="text" id="settingWhatsapp" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500" value="6281234567890">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Pesan Otomatis WhatsApp Checkout</label>
+                            <textarea id="settingWaMessage" rows="3" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">Halo Admin Pann Store, saya ingin konfirmasi pembayaran untuk pesanan akun:</textarea>
+                        </div>
+                        <button onclick="saveStoreSettings()" class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm transition">
+                            Simpan Pengaturan
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ==================== MODAL 1: CHECKOUT & MANDATORY NAME/WA ==================== -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-darkCard border border-darkBorder rounded-3xl max-w-xl w-full p-6 space-y-6 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-xl bg-darkBg border border-darkBorder">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center border border-purple-500/30">
+                    <i data-lucide="credit-card" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-white">Checkout Pembayaran Sah Indonesia</h3>
+                    <p class="text-xs text-slate-400">Wajib isi Nama Lengkap & Nomor WhatsApp</p>
+                </div>
+            </div>
+
+            <!-- Product Summary -->
+            <div id="checkoutProductSummary" class="bg-darkBg p-4 rounded-2xl border border-darkBorder flex items-center gap-4">
+                <!-- Dynamically populated -->
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Lengkap Pembeli <span class="text-red-400">*Wajib</span></label>
+                    <input type="text" id="buyerName" placeholder="Contoh: Rian Pratama" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Nomor WhatsApp Aktif <span class="text-red-400">*Wajib</span></label>
+                    <input type="text" id="buyerWhatsapp" placeholder="Contoh: 081234567890" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-2">Metode Pembayaran Sah Tersedia</label>
+                    <div id="checkoutPaymentOptionsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-56 overflow-y-auto pr-1">
+                        <!-- Dynamically populated from active custom payment methods -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                <button onclick="processWhatsAppCheckout()" class="flex-1 px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition flex items-center justify-center space-x-2 shadow-lg shadow-emerald-600/20">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>Lanjut Chat WhatsApp & Pesan</span>
+                </button>
+                <button onclick="processWebCheckout()" class="flex-1 px-4 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-sm shadow-lg shadow-purple-600/30 hover:opacity-95 transition flex items-center justify-center space-x-2">
+                    <i data-lucide="check-circle" class="w-4 h-4"></i>
+                    <span>Konfirmasi Pesanan Web</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL 2: BUYER ORDERS & ACCOUNT DATA RETRIEVAL ==================== -->
+    <div id="buyerOrdersModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-darkCard border border-darkBorder rounded-3xl max-w-2xl w-full p-6 space-y-6 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeBuyerOrdersModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-xl bg-darkBg border border-darkBorder">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+                    <i data-lucide="package-check" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-white">Pesanan Saya & Data Akun Game</h3>
+                    <p class="text-xs text-slate-400">Masukkan nomor WhatsApp Anda untuk melihat data akun yang telah dikirim penjual</p>
+                </div>
+            </div>
+
+            <div class="flex gap-2">
+                <input type="text" id="searchBuyerWaInput" placeholder="Masukkan No. WhatsApp Anda (Contoh: 081234567890)" class="flex-grow bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                <button onclick="searchBuyerOrders()" class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm transition">Cari</button>
+            </div>
+
+            <div id="buyerOrdersResultContainer" class="space-y-4 max-h-96 overflow-y-auto">
+                <div class="text-center py-12 text-slate-500 text-sm">Silakan masukkan nomor WhatsApp Anda di atas untuk melihat riwayat pesanan dan data akun.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL 3: LIVE WEB CHAT & KENDALA ==================== -->
+    <div id="chatModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-darkCard border border-darkBorder rounded-3xl max-w-md w-full h-[600px] flex flex-col justify-between overflow-hidden relative shadow-2xl">
+            <!-- Header -->
+            <div class="p-4 bg-darkBg border-b border-darkBorder flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-cyan-400 flex items-center justify-center text-white font-bold">PS</div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Live Support & Kendala Pann Store</h4>
+                        <span class="text-[11px] text-emerald-400 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Online (Siap Membantu)</span>
+                    </div>
+                </div>
+                <button onclick="closeChatModal()" class="text-slate-400 hover:text-white p-2 rounded-xl bg-darkCard border border-darkBorder">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Messages Box -->
+            <div id="chatMessagesBox" class="flex-grow p-4 overflow-y-auto space-y-3 bg-darkBg/50 text-sm">
+                <!-- Populated dynamically -->
+            </div>
+
+            <!-- WhatsApp Shortcut Bar -->
+            <div class="px-4 py-2 bg-darkBg/80 border-t border-darkBorder flex items-center justify-between text-xs">
+                <span class="text-slate-400">Ada kendala transaksi?</span>
+                <a id="chatWhatsappLink" href="https://wa.me/6281234567890?text=Halo%20Admin%20Pann%20Store,%20saya%20ingin%20konsultasi%20kendala%20akun." target="_blank" class="text-emerald-400 font-bold hover:underline flex items-center gap-1">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Lanjut Chat WhatsApp
+                </a>
+            </div>
+
+            <!-- Input Box -->
+            <div class="p-4 bg-darkBg border-t border-darkBorder flex items-center space-x-2">
+                <input type="text" id="chatInputText" onkeypress="if(event.key === 'Enter') sendUserChatMessage()" placeholder="Ketik pesan atau kendala Anda..." class="flex-grow bg-darkCard border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                <button onclick="sendUserChatMessage()" class="p-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white transition shadow-md">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL 4: ADMIN PRODUCT MODAL ==================== -->
+    <div id="productModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-darkCard border border-darkBorder rounded-3xl max-w-xl w-full p-6 space-y-6 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-xl bg-darkBg border border-darkBorder">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center border border-purple-500/30">
+                    <i data-lucide="package-plus" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 id="productModalTitle" class="font-bold text-lg text-white">Tambah Akun Game Baru</h3>
+                    <p class="text-xs text-slate-400">Isi spesifikasi akun yang ingin dijual</p>
+                </div>
+            </div>
+
+            <input type="hidden" id="editProductId">
+
+            <div class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Judul Akun</label>
+                        <input type="text" id="formTitle" placeholder="Contoh: Akun ML Mythic Glory 120 Skin" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Pilih Game</label>
+                        <select id="formGame" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                            <option value="Mobile Legends">Mobile Legends</option>
+                            <option value="Free Fire">Free Fire</option>
+                            <option value="Genshin Impact">Genshin Impact</option>
+                            <option value="Valorant">Valorant</option>
+                            <option value="Roblox">Roblox</option>
+                            <option value="PUBG Mobile">PUBG Mobile</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Kategori Akun</label>
+                        <select id="formCategory" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                            <option value="Skin Epic / Collector">Skin Epic / Collector</option>
+                            <option value="Rank Mythic / Immortal">Rank Mythic / Immortal</option>
+                            <option value="Akun Berkah / Smurf">Akun Berkah / Smurf</option>
+                            <option value="Full Character / Weapon">Full Character / Weapon</option>
+                            <option value="Limited / Rare Items">Limited / Rare Items</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Harga (Rupiah)</label>
+                        <input type="number" id="formPrice" placeholder="Contoh: 450000" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">URL Gambar / Poster</label>
+                    <input type="text" id="formImage" placeholder="https://images.unsplash.com/photo-..." class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Spesifikasi Detail Akun</label>
+                    <textarea id="formDescription" rows="3" placeholder="Contoh: Login Moonton, All Unbind, Emblem Max, Siap pakai." class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500"></textarea>
+                </div>
+            </div>
+
+            <div class="flex space-x-3 pt-2">
+                <button onclick="closeProductModal()" class="flex-1 px-4 py-3 rounded-xl bg-darkBg border border-darkBorder text-slate-300 font-bold text-sm hover:bg-slate-800 transition">Batal</button>
+                <button onclick="saveProductData()" class="flex-1 px-4 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm shadow-lg shadow-purple-600/30 transition">Simpan Produk</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL 5: ADMIN PAYMENT METHOD CUSTOMIZATION MODAL ==================== -->
+    <div id="paymentMethodModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-darkCard border border-darkBorder rounded-3xl max-w-md w-full p-6 space-y-6 relative shadow-2xl">
+            <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-xl bg-darkBg border border-darkBorder">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center border border-cyan-500/30">
+                    <i data-lucide="wallet" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 id="paymentModalTitle" class="font-bold text-lg text-white">Tambah Metode Pembayaran</h3>
+                    <p class="text-xs text-slate-400">Atur pembayaran sah Indonesia</p>
+                </div>
+            </div>
+
+            <input type="hidden" id="editPaymentId">
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Metode / Bank / E-Wallet</label>
+                    <input type="text" id="payFormName" placeholder="Contoh: QRIS (All E-Wallet) atau Transfer Bank BCA" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Nomor Rekening / Virtual Account / Keterangan</label>
+                    <input type="text" id="payFormDetails" placeholder="Contoh: 1234567890 a.n PT Pann Store" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Kategori Pembayaran</label>
+                    <select id="payFormCategory" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                        <option value="QRIS">QRIS Instan</option>
+                        <option value="Bank">Transfer Bank</option>
+                        <option value="E-Wallet">E-Wallet (DANA/OVO/GoPay)</option>
+                        <option value="Minimarket">Minimarket (Alfamart/Indomaret)</option>
+                    </select>
+                </div>
+                <div class="flex items-center space-x-3 pt-1">
+                    <input type="checkbox" id="payFormActive" checked class="w-4 h-4 text-purple-600 rounded bg-darkBg border-darkBorder focus:ring-0">
+                    <label for="payFormActive" class="text-sm font-medium text-slate-300">Aktifkan Metode Pembayaran Ini</label>
+                </div>
+            </div>
+
+            <div class="flex space-x-3 pt-2">
+                <button onclick="closePaymentModal()" class="flex-1 px-4 py-3 rounded-xl bg-darkBg border border-darkBorder text-slate-300 font-bold text-sm hover:bg-slate-800 transition">Batal</button>
+                <button onclick="savePaymentMethodData()" class="flex-1 px-4 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-sm shadow-lg shadow-cyan-600/30 transition">Simpan Metode</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL 6: ADMIN SEND ACCOUNT DATA MODAL ==================== -->
+    <div id="sendAccountModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-darkCard border border-darkBorder rounded-3xl max-w-xl w-full p-6 space-y-6 relative shadow-2xl">
+            <button onclick="closeSendAccountModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-xl bg-darkBg border border-darkBorder">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+                    <i data-lucide="key-round" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-white">Kirim Data Akun ke Pembeli</h3>
+                    <p id="sendAccountOrderInfo" class="text-xs text-slate-400">ID Pesanan: #PANN-0000</p>
+                </div>
+            </div>
+
+            <input type="hidden" id="sendAccountId">
+            <input type="hidden" id="sendAccountBuyerWa">
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Username / Email Login Akun</label>
+                    <input type="text" id="accountUsername" placeholder="Contoh: player_ml_sultan@gmail.com" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500 font-mono">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Password Akun</label>
+                    <input type="text" id="accountPassword" placeholder="Contoh: PasswordAman123!" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500 font-mono">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Catatan Tambahan / Instruksi Login</label>
+                    <textarea id="accountNotes" rows="3" placeholder="Contoh: Silakan amankan email setelah login, all unbind aman bergaransi." class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500"></textarea>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                <button onclick="sendAccountDataViaWeb()" class="flex-1 px-4 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm transition flex items-center justify-center space-x-2 shadow-lg shadow-purple-600/30">
+                    <i data-lucide="globe" class="w-4 h-4"></i>
+                    <span>Simpan & Kirim ke Web Pembeli</span>
+                </button>
+                <button onclick="sendAccountDataViaWhatsapp()" class="flex-1 px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition flex items-center justify-center space-x-2 shadow-lg shadow-emerald-600/20">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>Kirim via WhatsApp Pembeli</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-darkBorder py-8 mt-12 bg-darkBg text-center text-xs text-slate-500">
+        <p>&copy; 2026 Pann Store. All rights reserved. Marketplace Akun Game Terpercaya & Bergaransi di Indonesia.</p>
+    </footer>
+
+    <script>
+        // Game List Configuration
+        const gamesList = [
+            { id: 'all', name: 'Semua Game', icon: 'gamepad-2' },
+            { id: 'Mobile Legends', name: 'Mobile Legends', icon: 'sword' },
+            { id: 'Free Fire', name: 'Free Fire', icon: 'crosshair' },
+            { id: 'Genshin Impact', name: 'Genshin Impact', icon: 'sparkles' },
+            { id: 'Valorant', name: 'Valorant', icon: 'shield' },
+            { id: 'Roblox', name: 'Roblox', icon: 'box' },
+            { id: 'PUBG Mobile', name: 'PUBG Mobile', icon: 'compass' }
+        ];
+
+        // Default Initial Seed Products
+        const defaultProducts = [
+            {
+                id: 'pann-1',
+                title: 'Akun ML Mythic Immortal All Skin KOF & Collector',
+                game: 'Mobile Legends',
+                category: 'Skin Epic / Collector',
+                price: 850000,
+                image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80',
+                description: 'Login Moonton bersih, all unbind aman, winrate 75%, emblem max semua.'
+            },
+            {
+                id: 'pann-2',
+                title: 'Sultan Free Fire SG 2 Ungu & Evo Gun Megalodon Max',
+                game: 'Free Fire',
+                category: 'Limited / Rare Items',
+                price: 490000,
+                image: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80',
+                description: 'Bundle pass old season 3, SG M1887 Metalic, karakter lengkap.'
+            },
+            {
+                id: 'pann-3',
+                title: 'Genshin Impact AR 58 Archon Squad C6 + Signature Weapon',
+                game: 'Genshin Impact',
+                category: 'Full Character / Weapon',
+                price: 1150000,
+                image: 'https://images.unsplash.com/photo-1612287233202-b51e3ed6173c?auto=format&fit=crop&w=600&q=80',
+                description: 'Server Asia, eksplorasi 100%, primogems sedia banyak.'
+            },
+            {
+                id: 'pann-4',
+                title: 'Valorant Diamond Reaver Vandal & Prime Karambit',
+                game: 'Valorant',
+                category: 'Skin Epic / Collector',
+                price: 650000,
+                image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80',
+                description: 'Full skin bundle premium, email pertama bisa diubah.'
+            },
+            {
+                id: 'pann-5',
+                title: 'Roblox Akun Robux Sisa 5000 + Limited Item Hat',
+                game: 'Roblox',
+                category: 'Limited / Rare Items',
+                price: 250000,
+                image: 'https://images.unsplash.com/photo-1614680376593-902f749f7ffc?auto=format&fit=crop&w=600&q=80',
+                description: 'Aman 100%, umur akun tua, banyak gamepass game populer.'
+            }
+        ];
+
+        // Default Payment Methods (Indonesian Legitimate Payments)
+        const defaultPaymentMethods = [
+            { id: 'pay-1', name: 'QRIS (Instant All E-Wallet & Bank)', details: 'Scan QRIS otomatis via BCA, DANA, OVO, GoPay, ShopeePay', category: 'QRIS', active: true },
+            { id: 'pay-2', name: 'Transfer Bank BCA', details: 'No. Rek: 1234567890 a.n PT Pann Store Indonesia', category: 'Bank', active: true },
+            { id: 'pay-3', name: 'Transfer Bank Mandiri', details: 'No. Rek: 0987654321 a.n PT Pann Store Indonesia', category: 'Bank', active: true },
+            { id: 'pay-4', name: 'E-Wallet DANA / OVO', details: 'No. DANA: 081234567890 a.n Rian Pann', category: 'E-Wallet', active: true },
+            { id: 'pay-5', name: 'Minimarket (Alfamart / Indomaret)', details: 'Bayar langsung melalui kasir minimarket terdekat', category: 'Minimarket', active: true }
+        ];
+
+        // Default Initial Orders (Includes accountData delivery field)
+        const defaultOrders = [
+            {
+                id: 'PANN-8821',
+                buyerName: 'Aldi Nugraha',
+                buyerWhatsapp: '081298765432',
+                productTitle: 'Akun ML Mythic Immortal All Skin KOF & Collector',
+                paymentMethod: 'QRIS (Instant All E-Wallet & Bank)',
+                price: 850000,
+                status: 'Selesai',
+                date: '11 Okt 2026',
+                accountData: {
+                    username: 'player_ml_sultan99@moonton.com',
+                    password: 'SecurePassword123!',
+                    notes: 'All unbind aman, email bisa diganti.'
+                }
+            }
+        ];
+
+        // Default Chat Sessions for buyer-seller grievance and help
+        const defaultChatSessions = [
+            {
+                sessionId: '081298765432',
+                customerName: 'Aldi Nugraha',
+                lastMessage: 'Halo admin, data akun sudah saya terima dengan aman.',
+                unread: false,
+                messages: [
+                    { sender: 'customer', text: 'Halo admin, apakah akun ML nya bergaransi?', time: '18:30' },
+                    { sender: 'admin', text: 'Halo Kak Aldi, betul bergaransi 100% anti hackback.', time: '18:32' },
+                    { sender: 'customer', text: 'Halo admin, data akun sudah saya terima dengan aman.', time: '19:00' }
+                ]
+            }
+        ];
+
+        // LocalStorage Data Initialization
+        let products = JSON.parse(localStorage.getItem('pann_products')) || defaultProducts;
+        let paymentMethods = JSON.parse(localStorage.getItem('pann_payments')) || defaultPaymentMethods;
+        let orders = JSON.parse(localStorage.getItem('pann_orders')) || defaultOrders;
+        let chatSessions = JSON.parse(localStorage.getItem('pann_chats')) || defaultChatSessions;
+        let storeSettings = JSON.parse(localStorage.getItem('pann_settings')) || {
+            storeName: 'Pann Store Official',
+            whatsapp: '6281234567890',
+            waMessage: 'Halo Admin Pann Store, saya ingin konfirmasi pembayaran untuk pesanan akun:'
+        };
+
+        let selectedGameFilter = 'all';
+        let currentCheckoutProduct = null;
+        let activeChatSessionId = '081298765432';
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderGameFilters();
+            renderProducts();
+            updateAdminStats();
+            renderAdminProducts();
+            renderAdminOrders();
+            renderAdminPaymentMethods();
+            renderAdminChatList();
+            loadSettingsToForm();
+            updateChatBadge();
+            lucide.createIcons();
+        });
+
+        // Navigation View Switcher
+        function switchView(view) {
+            const storeView = document.getElementById('storeView');
+            const adminView = document.getElementById('adminView');
+            const navStoreBtn = document.getElementById('navStoreBtn');
+            const navAdminBtn = document.getElementById('navAdminBtn');
+
+            if (view === 'store') {
+                storeView.classList.remove('hidden');
+                adminView.classList.add('hidden');
+                navStoreBtn.className = "px-4 py-2.5 rounded-xl text-sm font-semibold transition-all flex items-center space-x-2 bg-purple-600/20 text-purple-300 border border-purple-500/30 shadow-sm";
+                navAdminBtn.className = "px-4 py-2.5 rounded-xl text-sm font-semibold transition-all flex items-center space-x-2 bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white border border-darkBorder";
+                renderProducts();
+            } else {
+                storeView.classList.add('hidden');
+                adminView.classList.remove('hidden');
+                navAdminBtn.className = "px-4 py-2.5 rounded-xl text-sm font-semibold transition-all flex items-center space-x-2 bg-purple-600/20 text-purple-300 border border-purple-500/30 shadow-sm";
+                navStoreBtn.className = "px-4 py-2.5 rounded-xl text-sm font-semibold transition-all flex items-center space-x-2 bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white border border-darkBorder";
+                updateAdminStats();
+                renderAdminProducts();
+                renderAdminOrders();
+                renderAdminPaymentMethods();
+                renderAdminChatList();
+            }
+            lucide.createIcons();
+        }
+
+        // Admin Tabs Switcher
+        function switchAdminTab(tab) {
+            const tabs = ['dashboard', 'products', 'orders', 'payments', 'chats', 'settings'];
+            tabs.forEach(t => {
+                const content = document.getElementById(`adminContent${t.charAt(0).toUpperCase() + t.slice(1)}`);
+                const btn = document.getElementById(`adminTab${t.charAt(0).toUpperCase() + t.slice(1)}`);
+                if (t === tab) {
+                    content.classList.remove('hidden');
+                    btn.className = "pb-3 text-sm font-bold border-b-2 border-purple-500 text-purple-400 flex items-center space-x-2 whitespace-nowrap transition";
+                } else {
+                    content.classList.add('hidden');
+                    btn.className = "pb-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2 whitespace-nowrap transition";
+                }
+            });
+            lucide.createIcons();
+        }
+
+        // Render Game Filters
+        function renderGameFilters() {
+            const container = document.getElementById('gameFiltersContainer');
+            container.innerHTML = gamesList.map(g => `
+                <button onclick="selectGameFilter('${g.id}')" class="p-3.5 rounded-2xl border text-left transition flex flex-col justify-between space-y-2 ${selectedGameFilter === g.id ? 'bg-purple-600/20 border-purple-500 text-purple-300 shadow-lg shadow-purple-500/10' : 'bg-darkCard border-darkBorder text-slate-300 hover:border-slate-700'}">
+                    <div class="w-8 h-8 rounded-xl bg-darkBg flex items-center justify-center border border-darkBorder">
+                        <i data-lucide="${g.icon}" class="w-4 h-4 text-purple-400"></i>
+                    </div>
+                    <span class="text-xs font-bold truncate">${g.name}</span>
+                </button>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function selectGameFilter(gameId) {
+            selectedGameFilter = gameId;
+            renderGameFilters();
+            filterProducts();
+        }
+
+        // Filter and Sort Products
+        function filterProducts() {
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            const categoryQuery = document.getElementById('categoryFilter').value;
+            const sortQuery = document.getElementById('sortFilter').value;
+
+            let filtered = products.filter(p => {
+                const matchGame = selectedGameFilter === 'all' || p.game === selectedGameFilter;
+                const matchCategory = categoryQuery === 'all' || p.category === categoryQuery;
+                const matchSearch = p.title.toLowerCase().includes(searchQuery) || p.description.toLowerCase().includes(searchQuery);
+                return matchGame && matchCategory && matchSearch;
+            });
+
+            if (sortQuery === 'cheapest') {
+                filtered.sort((a, b) => a.price - b.price);
+            } else if (sortQuery === 'expensive') {
+                filtered.sort((a, b) => b.price - a.price);
+            } else {
+                filtered.reverse();
+            }
+
+            renderProductGrid(filtered);
+            document.getElementById('productCountBadge').innerText = `${filtered.length} Akun`;
+        }
+
+        function renderProductGrid(list) {
+            const grid = document.getElementById('productGrid');
+            if (list.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-16 text-center space-y-3 bg-darkCard rounded-3xl border border-darkBorder">
+                        <i data-lucide="package-open" class="w-12 h-12 text-slate-500 mx-auto"></i>
+                        <h4 class="text-base font-bold text-slate-300">Tidak ada akun ditemukan</h4>
+                        <p class="text-xs text-slate-500">Coba ubah kata kunci pencarian atau filter game.</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            grid.innerHTML = list.map(p => `
+                <div class="bg-darkCard rounded-3xl border border-darkBorder overflow-hidden flex flex-col justify-between hover:border-purple-500/50 transition duration-300 group shadow-xl">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-darkBg">
+                            <img src="${p.image}" alt="${p.title}" onerror="this.src='https://placehold.co/600x400/111827/a855f7?text=Game+Account'" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold bg-darkBg/80 backdrop-blur-md text-purple-300 border border-purple-500/30">
+                                ${p.game}
+                            </span>
+                            <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                                Ready Stock
+                            </span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <span class="text-xs font-medium text-slate-400 bg-darkBg px-2.5 py-1 rounded-lg border border-darkBorder inline-block">${p.category}</span>
+                            <h4 class="font-bold text-white text-base line-clamp-2 leading-snug">${p.title}</h4>
+                            <p class="text-xs text-slate-400 line-clamp-2">${p.description}</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex items-center justify-between border-t border-darkBorder/60 mt-4 pt-4">
+                        <div>
+                            <span class="text-xs text-slate-500 block">Harga</span>
+                            <span class="text-lg font-extrabold text-emerald-400">Rp ${p.price.toLocaleString('id-ID')}</span>
+                        </div>
+                        <button onclick="openCheckoutModal('${p.id}')" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:opacity-95 text-white font-bold text-xs shadow-lg shadow-purple-600/30 transition flex items-center space-x-1.5">
+                            <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i>
+                            <span>Beli Sekarang</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function renderProducts() {
+            filterProducts();
+        }
+
+        // Checkout Modal & Processing with Mandatory Name & WA Validation
+        function openCheckoutModal(productId) {
+            currentCheckoutProduct = products.find(p => p.id === productId);
+            if (!currentCheckoutProduct) return;
+
+            const summary = document.getElementById('checkoutProductSummary');
+            summary.innerHTML = `
+                <img src="${currentCheckoutProduct.image}" class="w-16 h-16 rounded-xl object-cover" onerror="this.src='https://placehold.co/100x100'">
+                <div>
+                    <span class="text-xs text-purple-400 font-semibold">${currentCheckoutProduct.game}</span>
+                    <h5 class="font-bold text-sm text-white line-clamp-1">${currentCheckoutProduct.title}</h5>
+                    <span class="text-sm font-extrabold text-emerald-400">Rp ${currentCheckoutProduct.price.toLocaleString('id-ID')}</span>
+                </div>
+            `;
+
+            // Render active custom payment methods
+            const payContainer = document.getElementById('checkoutPaymentOptionsContainer');
+            const activeMethods = paymentMethods.filter(pm => pm.active);
+            if (activeMethods.length === 0) {
+                payContainer.innerHTML = `<p class="text-xs text-red-400">Belum ada metode pembayaran aktif. Harap atur di Panel Admin.</p>`;
+            } else {
+                payContainer.innerHTML = activeMethods.map((pm, idx) => `
+                    <label class="flex items-start space-x-3 p-3 rounded-xl bg-darkBg border border-darkBorder cursor-pointer hover:border-purple-500 transition">
+                        <input type="radio" name="paymentMethod" value="${pm.name}" ${idx === 0 ? 'checked' : ''} class="mt-0.5 text-purple-600 focus:ring-0">
+                        <div>
+                            <span class="text-sm font-bold text-white block">${pm.name}</span>
+                            <span class="text-[11px] text-slate-400 block">${pm.details}</span>
+                        </div>
+                    </label>
+                `).join('');
+            }
+
+            document.getElementById('checkoutModal').classList.remove('hidden');
+            document.getElementById('checkoutModal').classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.remove('flex');
+            document.getElementById('checkoutModal').classList.add('hidden');
+        }
+
+        function processWhatsAppCheckout() {
+            const name = document.getElementById('buyerName').value.trim();
+            const whatsapp = document.getElementById('buyerWhatsapp').value.trim();
+            const paymentEl = document.querySelector('input[name="paymentMethod"]:checked');
+            const payment = paymentEl ? paymentEl.value : 'QRIS';
+
+            if (!name || !whatsapp) {
+                alert("PENTING: Mohon isi Nama Lengkap dan Nomor WhatsApp Anda dengan benar untuk kelancaran transaksi dan pengiriman data akun!");
+                return;
+            }
+
+            const newOrder = {
+                id: 'PANN-' + Math.floor(1000 + Math.random() * 9000),
+                buyerName: name,
+                buyerWhatsapp: whatsapp,
+                productTitle: currentCheckoutProduct.title,
+                paymentMethod: payment,
+                price: currentCheckoutProduct.price,
+                status: 'Pending',
+                date: '11 Okt 2026',
+                accountData: null
+            };
+
+            orders.unshift(newOrder);
+            localStorage.setItem('pann_orders', JSON.stringify(orders));
+
+            // Also initialize or register chat session for buyer kendala & chat
+            let existingChat = chatSessions.find(s => s.sessionId === whatsapp);
+            if (!existingChat) {
+                chatSessions.push({
+                    sessionId: whatsapp,
+                    customerName: name,
+                    lastMessage: `Halo Kak, saya memesan ${currentCheckoutProduct.title}`,
+                    unread: true,
+                    messages: [
+                        { sender: 'customer', text: `Halo Admin, saya baru saja membuat pesanan ${newOrder.id} untuk produk ${currentCheckoutProduct.title}. Mohon panduan pembayarannya.`, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }
+                    ]
+                });
+            } else {
+                existingChat.messages.push({
+                    sender: 'customer',
+                    text: `Halo Admin, pesanan baru ${newOrder.id} (${currentCheckoutProduct.title}).`,
+                    time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                });
+                existingChat.unread = true;
+            }
+            localStorage.setItem('pann_chats', JSON.stringify(chatSessions));
+
+            const waNumber = storeSettings.whatsapp;
+            const text = `${storeSettings.waMessage}%0A%0A*ID Pesanan:* ${newOrder.id}%0A*Nama:* ${name}%0A*No WA:* ${whatsapp}%0A*Akun:* ${currentCheckoutProduct.title}%0A*Metode Bayar:* ${payment}%0A*Total:* Rp ${currentCheckoutProduct.price.toLocaleString('id-ID')}%0A%0AMohon panduan pembayarannya. Terima kasih!`;
+            
+            closeCheckoutModal();
+            window.open(`https://wa.me/${waNumber}?text=${text}`, '_blank');
+            renderAdminOrders();
+            updateAdminStats();
+            renderAdminChatList();
+            updateChatBadge();
+        }
+
+        function processWebCheckout() {
+            const name = document.getElementById('buyerName').value.trim();
+            const whatsapp = document.getElementById('buyerWhatsapp').value.trim();
+            const paymentEl = document.querySelector('input[name="paymentMethod"]:checked');
+            const payment = paymentEl ? paymentEl.value : 'QRIS';
+
+            if (!name || !whatsapp) {
+                alert("PENTING: Mohon isi Nama Lengkap dan Nomor WhatsApp Anda dengan benar untuk kelancaran transaksi dan pengiriman data akun!");
+                return;
+            }
+
+            const newOrder = {
+                id: 'PANN-' + Math.floor(1000 + Math.random() * 9000),
+                buyerName: name,
+                buyerWhatsapp: whatsapp,
+                productTitle: currentCheckoutProduct.title,
+                paymentMethod: payment,
+                price: currentCheckoutProduct.price,
+                status: 'Pending',
+                date: '11 Okt 2026',
+                accountData: null
+            };
+
+            orders.unshift(newOrder);
+            localStorage.setItem('pann_orders', JSON.stringify(orders));
+
+            // Register chat session
+            let existingChat = chatSessions.find(s => s.sessionId === whatsapp);
+            if (!existingChat) {
+                chatSessions.push({
+                    sessionId: whatsapp,
+                    customerName: name,
+                    lastMessage: `Pesanan Web ${newOrder.id}`,
+                    unread: true,
+                    messages: [
+                        { sender: 'customer', text: `Halo Admin, saya memesan via web dengan ID ${newOrder.id}. Mohon verifikasi pembayaran saya.`, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }
+                    ]
+                });
+                localStorage.setItem('pann_chats', JSON.stringify(chatSessions));
+            }
+
+            closeCheckoutModal();
+            alert(`Pesanan Berhasil Dibuat!\nID Pesanan: ${newOrder.id}\nSilakan selesaikan pembayaran via ${payment}.\n\nAnda dapat mengecek status pesanan & data akun kapan saja di menu "Pesanan Saya & Data Akun" dengan memasukkan nomor WhatsApp Anda (${whatsapp}).`);
+            renderAdminOrders();
+            updateAdminStats();
+            renderAdminChatList();
+            updateChatBadge();
+        }
+
+        // Buyer Orders & Data Retrieval Modal
+        function openBuyerOrdersModal() {
+            document.getElementById('buyerOrdersModal').classList.remove('hidden');
+            document.getElementById('buyerOrdersModal').classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function closeBuyerOrdersModal() {
+            document.getElementById('buyerOrdersModal').classList.remove('flex');
+            document.getElementById('buyerOrdersModal').classList.add('hidden');
+        }
+
+        function searchBuyerOrders() {
+            const wa = document.getElementById('searchBuyerWaInput').value.trim();
+            const container = document.getElementById('buyerOrdersResultContainer');
+
+            if (!wa) {
+                alert("Mohon masukkan nomor WhatsApp Anda!");
+                return;
+            }
+
+            const buyerOrders = orders.filter(o => o.buyerWhatsapp.includes(wa));
+            if (buyerOrders.length === 0) {
+                container.innerHTML = `<div class="p-6 text-center text-slate-400 bg-darkBg rounded-2xl border border-darkBorder">Tidak ditemukan pesanan dengan nomor WhatsApp tersebut. Pastikan nomor yang dimasukkan benar.</div>`;
+                return;
+            }
+
+            container.innerHTML = buyerOrders.map(o => `
+                <div class="bg-darkBg p-5 rounded-2xl border border-darkBorder space-y-3">
+                    <div class="flex items-center justify-between border-b border-darkBorder pb-3">
+                        <div>
+                            <span class="text-xs font-mono text-purple-400 font-bold">${o.id}</span>
+                            <h5 class="font-bold text-white text-sm mt-0.5">${o.productTitle}</h5>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold ${o.status === 'Selesai' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'}">${o.status}</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 text-xs text-slate-300">
+                        <div><span class="text-slate-500">Nama:</span> ${o.buyerName}</div>
+                        <div><span class="text-slate-500">Metode:</span> ${o.paymentMethod}</div>
+                        <div><span class="text-slate-500">Total:</span> <span class="font-bold text-emerald-400">Rp ${o.price.toLocaleString('id-ID')}</span></div>
+                        <div><span class="text-slate-500">Tanggal:</span> ${o.date}</div>
+                    </div>
+                    
+                    ${o.accountData ? `
+                        <div class="mt-3 p-4 rounded-xl bg-purple-950/40 border border-purple-500/30 space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold text-purple-300 flex items-center gap-1.5"><i data-lucide="key-round" class="w-3.5 h-3.5 text-cyan-400"></i> Data Akun Game Anda:</span>
+                                <span class="text-[10px] text-emerald-400 font-bold">Berhasil Dikirim Penjual</span>
+                            </div>
+                            <div class="bg-darkBg p-3 rounded-lg font-mono text-xs text-slate-200 space-y-1 border border-darkBorder">
+                                <div><span class="text-slate-500">Username/Email:</span> <span class="text-cyan-300">${o.accountData.username}</span></div>
+                                <div><span class="text-slate-500">Password:</span> <span class="text-cyan-300">${o.accountData.password}</span></div>
+                                ${o.accountData.notes ? `<div><span class="text-slate-500">Catatan/Instruksi:</span> <span class="text-slate-300">${o.accountData.notes}</span></div>` : ''}
+                            </div>
+                        </div>
+                    ` : `
+                        <div class="mt-2 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs flex items-center justify-between">
+                            <span>⏳ Menunggu verifikasi pembayaran & pengiriman data akun oleh penjual.</span>
+                            <button onclick="openChatModal()" class="px-3 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold text-[11px]">Tanya Kendala</button>
+                        </div>
+                    `}
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        // Live Web Chat & Kendala Functions
+        function openChatModal() {
+            document.getElementById('chatModal').classList.remove('hidden');
+            document.getElementById('chatModal').classList.add('flex');
+            renderChatMessages();
+            lucide.createIcons();
+        }
+
+        function closeChatModal() {
+            document.getElementById('chatModal').classList.remove('flex');
+            document.getElementById('chatModal').classList.add('hidden');
+        }
+
+        function renderChatMessages() {
+            let session = chatSessions.find(s => s.sessionId === activeChatSessionId);
+            if (!session) {
+                session = { sessionId: activeChatSessionId, customerName: 'Pengunjung', lastMessage: '', unread: false, messages: [] };
+                chatSessions.push(session);
+            }
+
+            const box = document.getElementById('chatMessagesBox');
+            box.innerHTML = session.messages.map(m => `
+                <div class="flex ${m.sender === 'customer' ? 'justify-end' : 'justify-start'}">
+                    <div class="max-w-[80%] p-3 rounded-2xl ${m.sender === 'customer' ? 'bg-purple-600 text-white rounded-br-none' : 'bg-darkCard border border-darkBorder text-slate-200 rounded-bl-none'}">
+                        <p class="text-xs">${m.text}</p>
+                        <span class="text-[9px] opacity-70 block text-right mt-1">${m.time}</span>
+                    </div>
+                </div>
+            `).join('');
+            box.scrollTop = box.scrollHeight;
+        }
+
+        function sendUserChatMessage() {
+            const input = document.getElementById('chatInputText');
+            const text = input.value.trim();
+            if (!text) return;
+
+            let session = chatSessions.find(s => s.sessionId === activeChatSessionId);
+            if (!session) {
+                session = { sessionId: activeChatSessionId, customerName: 'Pelanggan', lastMessage: '', unread: false, messages: [] };
+                chatSessions.push(session);
+            }
+
+            const timeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            session.messages.push({ sender: 'customer', text, time: timeNow });
+            session.lastMessage = text;
+            session.unread = true;
+            input.value = '';
+
+            localStorage.setItem('pann_chats', JSON.stringify(chatSessions));
+            renderChatMessages();
+            renderAdminChatList();
+
+            // Simulated instant auto response for customer kendala
+            setTimeout(() => {
+                session.messages.push({ sender: 'admin', text: 'Halo Kak! Kendala atau pertanyaan Anda telah dicatat oleh Tim Pann Store. Admin akan segera membalas atau memandu Anda.', time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) });
+                session.lastMessage = 'Halo Kak! Kendala atau pertanyaan...';
+                localStorage.setItem('pann_chats', JSON.stringify(chatSessions));
+                renderChatMessages();
+                renderAdminChatList();
+                updateChatBadge();
+            }, 1000);
+        }
+
+        function updateChatBadge() {
+            const unreadCount = chatSessions.filter(s => s.unread).length;
+            const badge = document.getElementById('chatBadge');
+            if (unreadCount > 0) {
+                badge.innerText = unreadCount;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        // Admin Dashboard Functions
+        function updateAdminStats() {
+            document.getElementById('statTotalProducts').innerText = products.length;
+            document.getElementById('statTotalOrders').innerText = orders.length;
+            const totalRev = orders.filter(o => o.status === 'Selesai').reduce((acc, curr) => acc + curr.price, 0);
+            document.getElementById('statTotalRevenue').innerText = `Rp ${totalRev.toLocaleString('id-ID')}`;
+        }
+
+        function renderAdminProducts() {
+            const tbody = document.getElementById('adminProductTableBody');
+            tbody.innerHTML = products.map(p => `
+                <tr class="hover:bg-darkBg/40 transition">
+                    <td class="p-4 flex items-center space-x-3">
+                        <img src="${p.image}" class="w-10 h-10 rounded-lg object-cover" onerror="this.src='https://placehold.co/100x100'">
+                        <div>
+                            <span class="font-bold text-white line-clamp-1">${p.title}</span>
+                            <span class="text-xs text-purple-400">${p.game}</span>
+                        </div>
+                    </td>
+                    <td class="p-4"><span class="px-2.5 py-1 rounded-lg bg-darkBg border border-darkBorder text-xs text-slate-300">${p.category}</span></td>
+                    <td class="p-4 font-semibold text-emerald-400">Rp ${p.price.toLocaleString('id-ID')}</td>
+                    <td class="p-4"><span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs">Ready</span></td>
+                    <td class="p-4 text-center space-x-2">
+                        <button onclick="openEditProductModal('${p.id}')" class="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 hover:bg-blue-500/20 transition"><i data-lucide="edit-3" class="w-4 h-4"></i></button>
+                        <button onclick="deleteProduct('${p.id}')" class="p-2 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20 hover:bg-red-500/20 transition"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function renderAdminOrders() {
+            const tbody = document.getElementById('adminOrderTableBody');
+            tbody.innerHTML = orders.map(o => `
+                <tr class="hover:bg-darkBg/40 transition">
+                    <td class="p-4">
+                        <span class="font-mono font-semibold text-purple-400 block">${o.id}</span>
+                        <span class="font-bold text-white text-xs">${o.buyerName}</span>
+                        <span class="text-[11px] text-slate-400 block">${o.buyerWhatsapp}</span>
+                    </td>
+                    <td class="p-4 text-slate-300 line-clamp-2 max-w-xs">${o.productTitle}</td>
+                    <td class="p-4 text-xs text-slate-400">${o.paymentMethod}</td>
+                    <td class="p-4 font-semibold text-emerald-400">Rp ${o.price.toLocaleString('id-ID')}</td>
+                    <td class="p-4">
+                        <span class="px-2.5 py-1 rounded-full text-xs font-semibold ${o.status === 'Selesai' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : o.status === 'Dibatalkan' ? 'bg-red-500/20 text-red-400 border border-red-500/30' : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'}">
+                            ${o.status}
+                        </span>
+                        ${o.accountData ? '<span class="block text-[10px] text-purple-400 mt-1 font-semibold">✓ Data Akun Terkirim</span>' : ''}
+                    </td>
+                    <td class="p-4 text-center space-y-2">
+                        <button onclick="openSendAccountModal('${o.id}')" class="w-full px-3 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs transition flex items-center justify-center space-x-1.5 shadow-md shadow-purple-600/20">
+                            <i data-lucide="key-round" class="w-3.5 h-3.5"></i>
+                            <span>Kirim Data Akun</span>
+                        </button>
+                        <select onchange="updateOrderStatus('${o.id}', this.value)" class="w-full bg-darkBg border border-darkBorder rounded-xl px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-purple-500">
+                            <option value="Pending" ${o.status === 'Pending' ? 'selected' : ''}>Status: Pending</option>
+                            <option value="Selesai" ${o.status === 'Selesai' ? 'selected' : ''}>Status: Selesai</option>
+                            <option value="Dibatalkan" ${o.status === 'Dibatalkan' ? 'selected' : ''}>Status: Dibatalkan</option>
+                        </select>
+                    </td>
+                </tr>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        // Render Admin Custom Payment Methods
+        function renderAdminPaymentMethods() {
+            const grid = document.getElementById('adminPaymentGrid');
+            grid.innerHTML = paymentMethods.map(pm => `
+                <div class="bg-darkCard p-5 rounded-2xl border border-darkBorder flex flex-col justify-between space-y-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded-lg bg-darkBg text-cyan-400 border border-darkBorder text-xs font-semibold">${pm.category}</span>
+                            <span class="px-2 py-0.5 rounded-md text-[11px] font-bold ${pm.active ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-slate-700/50 text-slate-400'}">${pm.active ? 'Aktif' : 'Non-Aktif'}</span>
+                        </div>
+                        <h5 class="font-bold text-white text-base mt-2">${pm.name}</h5>
+                        <p class="text-xs text-slate-400">${pm.details}</p>
+                    </div>
+                    <div class="flex items-center space-x-2 pt-2 border-t border-darkBorder/60">
+                        <button onclick="openEditPaymentModal('${pm.id}')" class="flex-1 px-3 py-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 hover:bg-blue-500/20 transition text-xs font-bold flex items-center justify-center space-x-1">
+                            <i data-lucide="edit-3" class="w-3.5 h-3.5"></i><span>Edit</span>
+                        </button>
+                        <button onclick="deletePaymentMethod('${pm.id}')" class="px-3 py-2 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20 hover:bg-red-500/20 transition text-xs font-bold">
+                            <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        // Custom Payment Method CRUD
+        function openPaymentModal() {
+            document.getElementById('paymentModalTitle').innerText = "Tambah Metode Pembayaran";
+            document.getElementById('editPaymentId').value = "";
+            document.getElementById('payFormName').value = "";
+            document.getElementById('payFormDetails').value = "";
+            document.getElementById('payFormActive').checked = true;
+            document.getElementById('paymentMethodModal').classList.remove('hidden');
+            document.getElementById('paymentMethodModal').classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function openEditPaymentModal(payId) {
+            const pm = paymentMethods.find(item => item.id === payId);
+            if (!pm) return;
+
+            document.getElementById('paymentModalTitle').innerText = "Edit Metode Pembayaran";
+            document.getElementById('editPaymentId').value = pm.id;
+            document.getElementById('payFormName').value = pm.name;
+            document.getElementById('payFormDetails').value = pm.details;
+            document.getElementById('payFormCategory').value = pm.category;
+            document.getElementById('payFormActive').checked = pm.active;
+
+            document.getElementById('paymentMethodModal').classList.remove('hidden');
+            document.getElementById('paymentMethodModal').classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentMethodModal').classList.remove('flex');
+            document.getElementById('paymentMethodModal').classList.add('hidden');
+        }
+
+        function savePaymentMethodData() {
+            const id = document.getElementById('editPaymentId').value;
+            const name = document.getElementById('payFormName').value.trim();
+            const details = document.getElementById('payFormDetails').value.trim();
+            const category = document.getElementById('payFormCategory').value;
+            const active = document.getElementById('payFormActive').checked;
+
+            if (!name || !details) {
+                alert("Mohon isi nama metode dan detail rekening/keterangan dengan benar!");
+                return;
+            }
+
+            if (id) {
+                const index = paymentMethods.findIndex(p => p.id === id);
+                if (index !== -1) {
+                    paymentMethods[index] = { id, name, details, category, active };
+                }
+            } else {
+                const newPay = {
+                    id: 'pay-' + Date.now(),
+                    name,
+                    details,
+                    category,
+                    active
+                };
+                paymentMethods.push(newPay);
+            }
+
+            localStorage.setItem('pann_payments', JSON.stringify(paymentMethods));
+            closePaymentModal();
+            renderAdminPaymentMethods();
+        }
+
+        function deletePaymentMethod(payId) {
+            if (confirm("Yakin ingin menghapus metode pembayaran ini?")) {
+                paymentMethods = paymentMethods.filter(p => p.id !== payId);
+                localStorage.setItem('pann_payments', JSON.stringify(paymentMethods));
+                renderAdminPaymentMethods();
+            }
+        }
+
+        // Account Data Delivery Modal & Sending (Web & WhatsApp)
+        function openSendAccountModal(orderId) {
+            const ord = orders.find(o => o.id === orderId);
+            if (!ord) return;
+
+            document.getElementById('sendAccountId').value = ord.id;
+            document.getElementById('sendAccountBuyerWa').value = ord.buyerWhatsapp;
+            document.getElementById('sendAccountOrderInfo').innerText = `ID Pesanan: ${ord.id} - Pembeli: ${ord.buyerName}`;
+
+            if (ord.accountData) {
+                document.getElementById('accountUsername').value = ord.accountData.username || '';
+                document.getElementById('accountPassword').value = ord.accountData.password || '';
+                document.getElementById('accountNotes').value = ord.accountData.notes || '';
+            } else {
+                document.getElementById('accountUsername').value = '';
+                document.getElementById('accountPassword').value = '';
+                document.getElementById('accountNotes').value = '';
+            }
+
+            document.getElementById('sendAccountModal').classList.remove('hidden');
+            document.getElementById('sendAccountModal').classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function closeSendAccountModal() {
+            document.getElementById('sendAccountModal').classList.remove('flex');
+            document.getElementById('sendAccountModal').classList.add('hidden');
+        }
+
+        function sendAccountDataViaWeb() {
+            const orderId = document.getElementById('sendAccountId').value;
+            const username = document.getElementById('accountUsername').value.trim();
+            const password = document.getElementById('accountPassword').value.trim();
+            const notes = document.getElementById('accountNotes').value.trim();
+
+            if (!username || !password) {
+                alert("Mohon isi username/email dan password akun game!");
+                return;
+            }
+
+            const ord = orders.find(o => o.id === orderId);
+            if (ord) {
+                ord.accountData = { username, password, notes };
+                ord.status = 'Selesai';
+                localStorage.setItem('pann_orders', JSON.stringify(orders));
+                renderAdminOrders();
+                updateAdminStats();
+                closeSendAccountModal();
+                alert(`Data akun berhasil disimpan dan dikirim via web untuk pesanan ${orderId}!\nPembeli kini dapat langsung melihat data akun tersebut di menu "Pesanan Saya & Data Akun". Status pesanan otomatis menjadi Selesai.`);
+            }
+        }
+
+        function sendAccountDataViaWhatsapp() {
+            const orderId = document.getElementById('sendAccountId').value;
+            const waNumber = document.getElementById('sendAccountBuyerWa').value.trim();
+            const username = document.getElementById('accountUsername').value.trim();
+            const password = document.getElementById('accountPassword').value.trim();
+            const notes = document.getElementById('accountNotes').value.trim();
+
+            if (!username || !password) {
+                alert("Mohon isi username/email dan password akun game!");
+                return;
+            }
+
+            const ord = orders.find(o => o.id === orderId);
+            if (ord) {
+                ord.accountData = { username, password, notes };
+                ord.status = 'Selesai';
+                localStorage.setItem('pann_orders', JSON.stringify(orders));
+                renderAdminOrders();
+                updateAdminStats();
+            }
+
+            const formattedWa = waNumber.startsWith('0') ? '62' + waNumber.slice(1) : waNumber;
+            const text = `Halo Kak ${ord ? ord.buyerName : ''}, pembayaran untuk pesanan *${orderId}* (${ord ? ord.productTitle : ''}) telah terverifikasi!%0A%0ABerikut adalah *Data Akun Game* Anda:%0A- *Username/Email:* ${username}%0A- *Password:* ${password}%0A- *Catatan:* ${notes}%0A%0ATerima kasih telah berbelanja di Pann Store Official! Data ini juga tersimpan di menu web Pesanan Saya.`;
+
+            closeSendAccountModal();
+            window.open(`https://wa.me/${formattedWa}?text=${text}`, '_blank');
+        }
+
+        // Admin Chat List & Management for Kendala
+        function renderAdminChatList() {
+            const listDiv = document.getElementById('adminChatList');
+            listDiv.innerHTML = chatSessions.map(s => `
+                <div onclick="selectAdminChat('${s.sessionId}')" class="p-3 rounded-xl cursor-pointer border transition ${activeChatSessionId === s.sessionId ? 'bg-purple-600/20 border-purple-500' : 'bg-darkBg border-darkBorder hover:bg-slate-800'}">
+                    <div class="flex justify-between items-center">
+                        <h5 class="font-bold text-white text-xs">${s.customerName} (${s.sessionId})</h5>
+                        ${s.unread ? '<span class="w-2 h-2 rounded-full bg-purple-500"></span>' : ''}
+                    </div>
+                    <p class="text-[11px] text-slate-400 line-clamp-1 mt-1">${s.lastMessage}</p>
+                </div>
+            `).join('');
+            renderAdminChatWorkspace();
+        }
+
+        function selectAdminChat(sessionId) {
+            activeChatSessionId = sessionId;
+            const session = chatSessions.find(s => s.sessionId === sessionId);
+            if (session) session.unread = false;
+            localStorage.setItem('pann_chats', JSON.stringify(chatSessions));
+            renderAdminChatList();
+            updateChatBadge();
+        }
+
+        function renderAdminChatWorkspace() {
+            const ws = document.getElementById('adminChatWorkspace');
+            const session = chatSessions.find(s => s.sessionId === activeChatSessionId);
+            if (!session) {
+                ws.innerHTML = `<div class="text-center py-20 text-slate-500">Pilih percakapan pelanggan.</div>`;
+                return;
+            }
+
+            ws.innerHTML = `
+                <div class="p-3 bg-darkBg border-b border-darkBorder flex items-center justify-between">
+                    <span class="font-bold text-xs text-white">Chat Kendala dengan ${session.customerName} (${session.sessionId})</span>
+                    <a href="https://wa.me/${session.sessionId.startsWith('0') ? '62' + session.sessionId.slice(1) : session.sessionId}?text=Halo%20Kak%20${session.customerName},%20terkait%20kendala%20pesanan%20di%20Pann%20Store:" target="_blank" class="px-3 py-1 rounded-lg bg-emerald-600 text-white text-[11px] font-bold flex items-center gap-1">
+                        <i data-lucide="message-circle" class="w-3 h-3"></i> Chat WA Pembeli
+                    </a>
+                </div>
+                <div id="adminChatMsgs" class="flex-grow p-4 overflow-y-auto space-y-3 bg-darkBg/30 text-sm">
+                    ${session.messages.map(m => `
+                        <div class="flex ${m.sender === 'admin' ? 'justify-end' : 'justify-start'}">
+                            <div class="max-w-[80%] p-3 rounded-2xl ${m.sender === 'admin' ? 'bg-purple-600 text-white rounded-br-none' : 'bg-darkCard border border-darkBorder text-slate-200 rounded-bl-none'}">
+                                <p class="text-xs">${m.text}</p>
+                                <span class="text-[9px] opacity-70 block text-right mt-1">${m.time}</span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="p-3 bg-darkBg border-t border-darkBorder flex items-center space-x-2">
+                    <input type="text" id="adminReplyInput" onkeypress="if(event.key === 'Enter') sendAdminReply()" placeholder="Balas kendala pelanggan..." class="flex-grow bg-darkCard border border-darkBorder rounded-xl px-4 py-2 text-xs text-slate-200 focus:outline-none focus:border-purple-500">
+                    <button onclick="sendAdminReply()" class="px-4 py-2 rounded-xl bg-purple-600 text-white font-bold text-xs transition">Kirim</button>
+                </div>
+            `;
+            const box = document.getElementById('adminChatMsgs');
+            if (box) box.scrollTop = box.scrollHeight;
+            lucide.createIcons();
+        }
+
+        function sendAdminReply() {
+            const input = document.getElementById('adminReplyInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const session = chatSessions.find(s => s.sessionId === activeChatSessionId);
+            if (!session) return;
+
+            const timeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            session.messages.push({ sender: 'admin', text, time: timeNow });
+            session.lastMessage = 'Admin: ' + text;
+            input.value = '';
+
+            localStorage.setItem('pann_chats', JSON.stringify(chatSessions));
+            renderAdminChatWorkspace();
+            renderAdminChatList();
+        }
+
+        // Product CRUD
+        function openProductModal() {
+            document.getElementById('productModalTitle').innerText = "Tambah Akun Game Baru";
+            document.getElementById('editProductId').value = "";
+            document.getElementById('formTitle').value = "";
+            document.getElementById('formPrice').value = "";
+            document.getElementById('formImage').value = "";
+            document.getElementById('formDescription').value = "";
+            document.getElementById('productModal').classList.remove('hidden');
+            document.getElementById('productModal').classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function openEditProductModal(productId) {
+            const p = products.find(item => item.id === productId);
+            if (!p) return;
+
+            document.getElementById('productModalTitle').innerText = "Edit Akun Game";
+            document.getElementById('editProductId').value = p.id;
+            document.getElementById('formTitle').value = p.title;
+            document.getElementById('formGame').value = p.game;
+            document.getElementById('formCategory').value = p.category;
+            document.getElementById('formPrice').value = p.price;
+            document.getElementById('formImage').value = p.image;
+            document.getElementById('formDescription').value = p.description;
+
+            document.getElementById('productModal').classList.remove('hidden');
+            document.getElementById('productModal').classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').classList.remove('flex');
+            document.getElementById('productModal').classList.add('hidden');
+        }
+
+        function saveProductData() {
+            const id = document.getElementById('editProductId').value;
+            const title = document.getElementById('formTitle').value.trim();
+            const game = document.getElementById('formGame').value;
+            const category = document.getElementById('formCategory').value;
+            const price = parseFloat(document.getElementById('formPrice').value);
+            const image = document.getElementById('formImage').value.trim() || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80';
+            const description = document.getElementById('formDescription').value.trim();
+
+            if (!title || isNaN(price)) {
+                alert("Mohon isi judul dan harga dengan benar!");
+                return;
+            }
+
+            if (id) {
+                const index = products.findIndex(p => p.id === id);
+                if (index !== -1) {
+                    products[index] = { id, title, game, category, price, image, description };
+                }
+            } else {
+                const newProd = {
+                    id: 'pann-' + Date.now(),
+                    title,
+                    game,
+                    category,
+                    price,
+                    image,
+                    description
+                };
+                products.unshift(newProd);
+            }
+
+            localStorage.setItem('pann_products', JSON.stringify(products));
+            closeProductModal();
+            renderAdminProducts();
+            updateAdminStats();
+            renderProducts();
+        }
+
+        function deleteProduct(productId) {
+            if (confirm("Yakin ingin menghapus akun game ini dari Pann Store?")) {
+                products = products.filter(p => p.id !== productId);
+                localStorage.setItem('pann_products', JSON.stringify(products));
+                renderAdminProducts();
+                updateAdminStats();
+                renderProducts();
+            }
+        }
+
+        function updateOrderStatus(orderId, newStatus) {
+            const ord = orders.find(o => o.id === orderId);
+            if (ord) {
+                ord.status = newStatus;
+                localStorage.setItem('pann_orders', JSON.stringify(orders));
+                updateAdminStats();
+                renderAdminOrders();
+            }
+        }
+
+        function loadSettingsToForm() {
+            document.getElementById('settingStoreName').value = storeSettings.storeName;
+            document.getElementById('settingWhatsapp').value = storeSettings.whatsapp;
+            document.getElementById('settingWaMessage').value = storeSettings.waMessage;
+        }
+
+        function saveStoreSettings() {
+            storeSettings.storeName = document.getElementById('settingStoreName').value;
+            storeSettings.whatsapp = document.getElementById('settingWhatsapp').value;
+            storeSettings.waMessage = document.getElementById('settingWaMessage').value;
+
+            localStorage.setItem('pann_settings', JSON.stringify(storeSettings));
+            alert("Pengaturan Pann Store berhasil disimpan secara real-time!");
+        }
+    </script>
+</body>
+</html>
